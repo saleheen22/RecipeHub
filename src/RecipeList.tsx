@@ -57,12 +57,12 @@ const RecipeList = () => {
   // Handle opening the edit modal
   const handleEditClick = (recipe: Recipe) => {
     setSelectedRecipe(recipe);
-    document.getElementById('edit_modal')?.showModal();
+    (document.getElementById('edit_modal')as HTMLDialogElement)?.showModal();
   };
 
   // Handle successful edit submission
   const handleEditSuccess = () => {
-    document.getElementById('edit_modal')?.close();
+    (document.getElementById('edit_modal')as HTMLDialogElement)?.close();
     loadRecipes(); // Refresh the recipe list
     setSelectedRecipe(null); // Clear selected recipe
   };
@@ -139,7 +139,7 @@ const RecipeList = () => {
             </p>
             <button 
               className="btn bg-red-500 hover:bg-red-600 text-white mt-4"
-              onClick={() => document.getElementById('my_modal_3')?.showModal()}
+              onClick={() => (document.getElementById('my_modal_3')as HTMLDialogElement)?.showModal()}
             >
               Add Your First Recipe
             </button>
@@ -214,7 +214,7 @@ const RecipeList = () => {
           <div className="mt-8 text-center">
             <button 
               className="btn bg-red-500 hover:bg-red-600 text-white"
-              onClick={() => document.getElementById('my_modal_3')?.showModal()}
+              onClick={() => (document.getElementById('my_modal_3')as HTMLDialogElement)?.showModal()}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

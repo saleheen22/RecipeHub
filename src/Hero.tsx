@@ -1,4 +1,4 @@
-import React from 'react';
+
 import heroImage from './assets/hero.jpg';
 import Typewriter from 'typewriter-effect';
 

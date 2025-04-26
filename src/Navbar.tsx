@@ -11,7 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ onRecipeChange }) => {
     // Handle successful recipe submission
     const handleRecipeSuccess = () => {
         // Close the modal after successful submission
-        document.getElementById('my_modal_3')?.close();
+        (document.getElementById('my_modal_3') as HTMLDialogElement)?.close();
         
         // Call the refresh function to update the recipe list
         if (onRecipeChange) {
@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ onRecipeChange }) => {
                 <div className="navbar-end">
                     <button 
                         className="btn p-4 text-xl font-medium bg-red-500 hover:bg-red-600 text-white border-none rounded-lg gap-2"
-                        onClick={() => document.getElementById('my_modal_3')?.showModal()}
+                        onClick={() => (document.getElementById('my_modal_3') as HTMLDialogElement)?.showModal()}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
