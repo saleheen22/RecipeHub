@@ -90,6 +90,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({
                 alert('Recipe added successfully!');
             } else if (mode === 'update' && recipeId) {
                 // Update existing recipe
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
                 const updatedRecipe = recipeService.updateRecipe(recipeId, formData);
                 
                 if (onSubmit) {
