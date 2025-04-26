@@ -73,7 +73,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({
         try {
             if (mode === 'add') {
                 // Create new recipe
-                const newRecipe = recipeService.createRecipe(formData);
+                recipeService.createRecipe(formData);
                 
                 if (onSubmit) {
                     onSubmit(formData);
@@ -92,7 +92,7 @@ const RecipeForm: React.FC<RecipeFormProps> = ({
             } else if (mode === 'update' && recipeId) {
                 // Update existing recipe
                 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                const updatedRecipe = recipeService.updateRecipe(recipeId, formData);
+                recipeService.updateRecipe(recipeId, formData);
                 
                 if (onSubmit) {
                     onSubmit(formData);
